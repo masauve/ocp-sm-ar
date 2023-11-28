@@ -1,0 +1,64 @@
+{
+  "apiVersion": "v1",
+  "kind": "Namespace",
+  "metadata": {
+    "annotations": {
+      "openshift.io/sa.scc.mcs": "s0:c27,c19",
+      "openshift.io/sa.scc.supplemental-groups": "1000740000/10000",
+      "openshift.io/sa.scc.uid-range": "1000740000/10000"
+    },
+    "creationTimestamp": "2023-01-16T20:52:02Z",
+    "deletionTimestamp": "2023-11-21T21:14:58Z",
+    "labels": {
+      "kubernetes.io/metadata.name": "openshift-gitops",
+      "olm.operatorgroup.uid/09fe3000-f628-424f-9efa-2692b98f88f6": "",
+      "openshift.io/cluster-monitoring": "true"
+    },
+    "name": "openshift-gitops",
+    "resourceVersion": "577691327",
+    "uid": "3de29b16-8e7e-4820-a191-f267c1a316d5"
+  },
+  "spec": {
+    "finalizers": []
+  },
+  "status": {
+    "conditions": [
+      {
+        "lastTransitionTime": "2023-11-21T21:15:04Z",
+        "message": "All resources successfully discovered",
+        "reason": "ResourcesDiscovered",
+        "status": "False",
+        "type": "NamespaceDeletionDiscoveryFailure"
+      },
+      {
+        "lastTransitionTime": "2023-11-21T21:15:04Z",
+        "message": "All legacy kube types successfully parsed",
+        "reason": "ParsedGroupVersions",
+        "status": "False",
+        "type": "NamespaceDeletionGroupVersionParsingFailure"
+      },
+      {
+        "lastTransitionTime": "2023-11-21T21:15:04Z",
+        "message": "All content successfully deleted, may be waiting on finalization",
+        "reason": "ContentDeleted",
+        "status": "False",
+        "type": "NamespaceDeletionContentFailure"
+      },
+      {
+        "lastTransitionTime": "2023-11-21T21:15:04Z",
+        "message": "Some resources are remaining: applications.argoproj.io has 2 resource instances",
+        "reason": "SomeResourcesRemain",
+        "status": "True",
+        "type": "NamespaceContentRemaining"
+      },
+      {
+        "lastTransitionTime": "2023-11-21T21:15:04Z",
+        "message": "Some content in the namespace has finalizers remaining: resources-finalizer.argocd.argoproj.io in 2 resource instances",
+        "reason": "SomeFinalizersRemain",
+        "status": "True",
+        "type": "NamespaceFinalizersRemaining"
+      }
+    ],
+    "phase": "Terminating"
+  }
+}

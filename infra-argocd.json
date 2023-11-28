@@ -1,0 +1,73 @@
+{
+  "apiVersion": "v1",
+  "kind": "Namespace",
+  "metadata": {
+    "annotations": {
+      "helm.sh/hook": "pre-install,pre-upgrade",
+      "openshift.io/description": "",
+      "openshift.io/display-name": "",
+      "openshift.io/sa.scc.mcs": "s0:c33,c17",
+      "openshift.io/sa.scc.supplemental-groups": "1001090000/10000",
+      "openshift.io/sa.scc.uid-range": "1001090000/10000",
+      "operator.tekton.dev/prune.hash": "e12cf88878007ab90299fa28c92d42daf72a1dda6ff604ea40c1f1da0f1f5e1d"
+    },
+    "creationTimestamp": "2023-06-05T19:22:50Z",
+    "deletionTimestamp": "2023-11-21T21:14:09Z",
+    "labels": {
+      "kubernetes.io/metadata.name": "infra-argocd",
+      "olm.operatorgroup.uid/09fe3000-f628-424f-9efa-2692b98f88f6": "",
+      "openshift-pipelines.tekton.dev/namespace-reconcile-version": "1.12.1",
+      "openshift.io/cluster-monitoring": "true",
+      "pod-security.kubernetes.io/audit": "baseline",
+      "pod-security.kubernetes.io/audit-version": "v1.24",
+      "pod-security.kubernetes.io/warn": "baseline",
+      "pod-security.kubernetes.io/warn-version": "v1.24"
+    },
+    "name": "infra-argocd",
+    "resourceVersion": "577688976",
+    "uid": "6b7b4e75-a3d3-48fa-9461-1b9a329178fd"
+  },
+  "spec": {
+    "finalizers": []
+  },
+  "status": {
+    "conditions": [
+      {
+        "lastTransitionTime": "2023-11-21T21:14:16Z",
+        "message": "All resources successfully discovered",
+        "reason": "ResourcesDiscovered",
+        "status": "False",
+        "type": "NamespaceDeletionDiscoveryFailure"
+      },
+      {
+        "lastTransitionTime": "2023-11-21T21:14:16Z",
+        "message": "All legacy kube types successfully parsed",
+        "reason": "ParsedGroupVersions",
+        "status": "False",
+        "type": "NamespaceDeletionGroupVersionParsingFailure"
+      },
+      {
+        "lastTransitionTime": "2023-11-21T21:14:16Z",
+        "message": "All content successfully deleted, may be waiting on finalization",
+        "reason": "ContentDeleted",
+        "status": "False",
+        "type": "NamespaceDeletionContentFailure"
+      },
+      {
+        "lastTransitionTime": "2023-11-21T21:14:16Z",
+        "message": "Some resources are remaining: applications.argoproj.io has 8 resource instances",
+        "reason": "SomeResourcesRemain",
+        "status": "True",
+        "type": "NamespaceContentRemaining"
+      },
+      {
+        "lastTransitionTime": "2023-11-21T21:14:16Z",
+        "message": "Some content in the namespace has finalizers remaining: resources-finalizer.argocd.argoproj.io in 8 resource instances",
+        "reason": "SomeFinalizersRemain",
+        "status": "True",
+        "type": "NamespaceFinalizersRemaining"
+      }
+    ],
+    "phase": "Terminating"
+  }
+}
